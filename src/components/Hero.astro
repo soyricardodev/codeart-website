@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets"
+import heroimg from "@/assets/hero-screenshot.avif"
+---
+
+<div class="overflow-x-clip">
+	<div class="mx-auto max-w-screen-xl px-5">
+		<main class="relative grid place-items-center lg:grid-cols-5">
+			<div class="bg-gradient-radial absolute right-0 top-0 -z-10 h-96 w-96 from-blue-200 blur-2xl">
+			</div>
+			<div
+				class="bg-gradient-radial absolute right-56 top-10 -z-10 h-96 w-96 from-purple-200 blur-2xl"
+			>
+			</div>
+			<div class="max-w-sm md:max-w-max lg:col-span-2">
+				<h1
+					class="text-center text-3xl font-bold [text-wrap:balance] lg:text-start lg:text-4xl lg:tracking-tight xl:text-6xl xl:tracking-tighter"
+				>
+					Create websites with Codeart™
+				</h1>
+				<p
+					class="mt-4 max-w-lg text-center text-lg text-slate-600 [text-wrap:balance] lg:text-start"
+				>
+					Pro version of popular Codeart starter template made for startups. Built with Astro and
+					Tailwind CSS.
+				</p>
+				<div class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
+					<a
+						href="https://web3templates.com/templates/Codeart-pro-astro-saas-website-template"
+						target="_blank"
+						rel="noopener"
+						class="focus-visible:shadow-outline-blue flex items-center justify-center gap-1 rounded-full bg-blue-600 px-7 py-2.5 text-center text-white transition hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+					>
+						Buy Template — $49
+					</a>
+					<a
+						href="https://github.com/surjithctly/Codeart"
+						rel="noopener"
+						target="_blank"
+						class="focus-visible:shadow-outline-blue flex items-center justify-center gap-1 rounded-full border-2 border-blue-500 bg-white px-7 py-2.5 text-center text-blue-600 transition hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+					>
+						Free Version
+					</a>
+				</div>
+			</div>
+			<div class="py-3 lg:col-span-3 lg:-mr-44">
+				<Image src={heroimg} alt="Astronaut in the air" class="rounded-lg" />
+			</div>
+		</main>
+	</div>
+</div>
