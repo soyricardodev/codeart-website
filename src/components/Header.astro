@@ -1,0 +1,72 @@
+---
+import crypto from "node:crypto"
+import { cn } from "../lib/utils"
+import Container from "./Container.astro"
+import { Button } from "./button"
+
+interface HeaderProps {
+	invert?: boolean
+}
+
+const { invert = false } = Astro.props as HeaderProps
+---
+
+<Container>
+	<div class="flex items-center justify-between">
+		<a href="/" class="font-display text-xl font-bold" aria-label="Home"> Codeart </a>
+		<div class="flex items-center gap-x-2 md:gap-x-8">
+			<Button href="/" invert={invert}> Dashboard </Button>
+			<button
+				type="button"
+				aria-expanded="false"
+				aria-controls={crypto.randomUUID()}
+				class:list={cn(
+					"group -m-2.5 rounded-full p-2.5 transition max-md:ml-4 max-sm:ml-3",
+					invert ? "hover:bg-white/10" : "hover:bg-primary/10"
+				)}
+				aria-label="Toggle navigation"
+			>
+				<svg
+					class:list={cn(
+						"h-6 w-6",
+						invert
+							? "fill-white group-hover:fill-neutral-200"
+							: "fill-primary group-hover:fill-neutral-700"
+					)}
+					viewBox="0 0 24 24"
+					aria-hidden="true"
+				>
+					<path d="M2 6h20v2H2zM2 16h20v2H2z"></path>
+				</svg>
+				<svg
+					viewBox="0 0 24 24"
+					aria-hidden="true"
+					class:list={cn(
+						"h-6 w-6",
+						invert
+							? "fill-white group-hover:fill-neutral-200"
+							: "fill-primary group-hover:fill-neutral-700"
+					)}
+				>
+					<path d="m5.636 4.223 14.142 14.142-1.414 1.414L4.222 5.637z"></path>
+					<path d="M4.222 18.363 18.364 4.22l1.414 1.414L5.636 19.777z"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+</Container>
+
+<script>
+	let expanded = false
+	const button = document.querySelector("button") as HTMLButtonElement
+
+	function toggleExpanded() {
+		expanded = !expanded
+		button.setAttribute("aria-expanded", expanded.toString())
+	}
+
+	button.addEventListener("click", (event) => {
+		event.preventDefault()
+		toggleExpanded()
+	})
+</script>

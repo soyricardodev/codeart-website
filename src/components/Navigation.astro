@@ -1,0 +1,17 @@
+---
+import NavigationRow from "./NavigationRow.astro"
+import NavigationItem from "./NavigationItem.astro"
+import NavigationDetails from "./NavigationDetails.astro"
+---
+
+<nav class="mt-px font-display text-5xl font-medium tracking-tight text-white">
+	<NavigationRow>
+		<NavigationItem href="/blog">Blog</NavigationItem>
+		<NavigationItem href="/changelog">Changelog</NavigationItem>
+	</NavigationRow>
+	<NavigationRow>
+		<NavigationItem href="/about">About</NavigationItem>
+		<NavigationItem href="/templates">Templates</NavigationItem>
+	</NavigationRow>
+</nav>
+<NavigationDetails />

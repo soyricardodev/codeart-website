@@ -1,51 +1,36 @@
 ---
 import { Image } from "astro:assets"
-import heroimg from "@/assets/hero-screenshot.avif"
+import Container from "./Container.astro"
+import { FadeIn } from "./fade-in"
+import { hero } from "@/assets"
+import Button from "@/components/Button.astro"
 ---
 
-<div class="overflow-x-clip">
-	<div class="mx-auto max-w-screen-xl px-5">
-		<main class="relative grid place-items-center lg:grid-cols-5">
-			<div class="bg-gradient-radial absolute right-0 top-0 -z-10 h-96 w-96 from-blue-200 blur-2xl">
-			</div>
-			<div
-				class="bg-gradient-radial absolute right-56 top-10 -z-10 h-96 w-96 from-purple-200 blur-2xl"
-			>
-			</div>
-			<div class="max-w-sm md:max-w-max lg:col-span-2">
-				<h1
-					class="text-center text-3xl font-bold [text-wrap:balance] lg:text-start lg:text-4xl lg:tracking-tight xl:text-6xl xl:tracking-tighter"
+<Container className="mt-20 w-full flex-auto sm:mt-24 md:mb-8 md:mt-28">
+	<FadeIn client:visible className="md:spacing-x-4 flex flex-col md:flex-row md:justify-stretch">
+		<div class="w-full">
+			<h1 class="text-balance font-display text-5xl font-bold tracking-tight text-neutral-950">
+				Codeart: <span
+					class="bg-gradient-to-br from-blue-400 via-primary to-sky-400 bg-clip-text text-transparent"
+					>Soluciones a la medida
+				</span>para tu negocio.
+			</h1>
+			<p class="mt-6 text-pretty text-xl text-secondary-foreground">
+				Ofrecemos una amplia gama de servicios, desde aplicaciones web y móviles hasta sistemas
+				administrativos y soluciones de comercio electrónico.
+			</p>
+			<div class="mt-4 flex flex-col space-y-4 md:flex-row md:space-x-8 md:space-y-0">
+				<Button size="xl" className="flex-none text-sm font-bold" href="/"> Empieza gratis</Button>
+				<Button
+					size="xl"
+					className="flex-none rounded-full text-sm font-semibold"
+					variant="ghost"
+					href="/"
 				>
-					Create websites with Codeart™
-				</h1>
-				<p
-					class="mt-4 max-w-lg text-center text-lg text-slate-600 [text-wrap:balance] lg:text-start"
-				>
-					Pro version of popular Codeart starter template made for startups. Built with Astro and
-					Tailwind CSS.
-				</p>
-				<div class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
-					<a
-						href="https://web3templates.com/templates/Codeart-pro-astro-saas-website-template"
-						target="_blank"
-						rel="noopener"
-						class="focus-visible:shadow-outline-blue flex items-center justify-center gap-1 rounded-full bg-blue-600 px-7 py-2.5 text-center text-white transition hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-					>
-						Buy Template — $49
-					</a>
-					<a
-						href="https://github.com/surjithctly/Codeart"
-						rel="noopener"
-						target="_blank"
-						class="focus-visible:shadow-outline-blue flex items-center justify-center gap-1 rounded-full border-2 border-blue-500 bg-white px-7 py-2.5 text-center text-blue-600 transition hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-					>
-						Free Version
-					</a>
-				</div>
+					Contactanos
+				</Button>
 			</div>
-			<div class="py-3 lg:col-span-3 lg:-mr-44">
-				<Image src={heroimg} alt="Astronaut in the air" class="rounded-lg" />
-			</div>
-		</main>
-	</div>
-</div>
+		</div>
+		<Image src={hero} alt="Product cap" class="h-auto w-auto max-w-2xl lg:ml-12" />
+	</FadeIn>
+</Container>

@@ -33,5 +33,10 @@ const testimonials = [
 ]
 
 export function Testimonials() {
-	return <InfiniteMovingCards items={testimonials} direction="right" speed="slow" />
+	return (
+		<>
+			<InfiniteMovingCards items={testimonials} direction="right" speed="slow" />
+			<InfiniteMovingCards items={testimonials} direction="left" speed="normal" />
+		</>
+	)
 }

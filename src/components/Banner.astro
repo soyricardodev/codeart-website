@@ -1,15 +1,17 @@
+---
+import Button from "./Button.astro"
+---
+
 <div
-	class="mt-20 flex flex-col items-center bg-gradient-to-bl from-blue-900 to-blue-700 p-8 text-center md:px-20 md:py-20"
+	class="mt-20 flex flex-col items-center bg-gradient-to-bl from-primary to-primary/80 p-8 text-center md:px-20 md:py-20"
 >
-	<h2 class="text-4xl tracking-tight text-white md:text-6xl">Build faster websites.</h2>
+	<h2 class="font-display text-4xl tracking-tight text-white md:text-6xl">
+		Build faster websites.
+	</h2>
 	<p class="mt-4 text-lg text-white/70 md:text-xl">
 		Pull content from anywhere and serve it fast with Astro's next-gen island architecture.
 	</p>
 	<div class="mt-5 flex">
-		<a
-			href="#"
-			class="focus-visible:shadow-outline-blue rounded-full border-2 border-transparent bg-white px-7 py-2.5 text-center text-blue-800 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-			>Sign up for a 14-day Trial
-		</a>
+		<Button href="/" size="lg" variant="outline" className="rounded-full">Pruebalo Gratis</Button>
 	</div>
 </div>

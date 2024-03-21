@@ -1,0 +1,173 @@
+---
+import { Image } from "astro:assets"
+import Button from "./Button.astro"
+import { workflow1, workflow2 } from "@/assets"
+import { cn } from "@/lib/utils"
+
+export interface FeatureItemProps {
+	badge: string
+	title: string
+	description: string
+	featuresList: string[]
+	image: "workflow1" | "workflow2"
+	isReversed?: boolean
+}
+
+const {
+	badge,
+	title,
+	description,
+	image,
+	featuresList,
+	isReversed = false,
+} = Astro.props as FeatureItemProps
+const asset = image === "workflow1" ? workflow1 : workflow2
+---
+
+<div class="feature-container grid py-10 md:grid-cols-2">
+	<div class:list={cn("grid place-items-center", isReversed && "pb-10 md:order-2 md:pb-0")}>
+		<Image alt="Feature 1" width={730} height={584} src={asset} />
+	</div>
+	<div class="grid place-items-center">
+		<div class="max-w-lg">
+			<span
+				class="badge -ml-px rounded-full border border-primary bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+			>
+				{badge}
+			</span>
+			<h3 class="mt-4 text-balance font-display text-2xl font-medium">
+				{title}
+			</h3>
+			<p class="mt-4 text-pretty text-secondary-foreground">
+				{description}
+			</p>
+			<ul class="mt-6 grid gap-y-4 text-left">
+				{
+					featuresList.map((feature) => (
+						<li class="flex items-center gap-3">
+							<svg
+								width="1em"
+								height="1em"
+								viewBox="0 0 256 256"
+								class="h-5 w-5"
+								data-icon="ph:check-circle-fill"
+							>
+								<symbol id="ai:ph:check-circle-fill">
+									<path
+										class="fill-primary"
+										d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"
+									/>
+								</symbol>
+								<use xlink:href="#ai:ph:check-circle-fill" />
+							</svg>
+							<span class="text-base">{feature}</span>
+						</li>
+					))
+				}
+			</ul>
+			<div class="mt-6 flex items-center gap-4">
+				<Button href="/" className="rounded-full">
+					<span>Pruebalo Gratis</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+						class="mt-px h-4 w-4 transition-transform group-hover:translate-x-1"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+							clip-rule="evenodd"></path>
+					</svg>
+				</Button>
+				<Button href="/" variant="ghost" className="rounded-full">Contactanos</Button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	@keyframes showFeatureImg {
+		from {
+			opacity: 0;
+			scale: 25%;
+		}
+
+		to {
+			opacity: 1;
+			scale: 100%;
+		}
+	}
+
+	img {
+		view-timeline-name: --image;
+		view-timeline-axis: block;
+
+		animation-timeline: --image;
+		animation-name: showFeatureImg;
+
+		animation-range: entry 25% cover 50%;
+		animation-fill-mode: both;
+	}
+
+	@keyframes showFeatureDetails {
+		from {
+			opacity: 0;
+			scale: 25%;
+		}
+
+		to {
+			opacity: 1;
+			scale: 100%;
+		}
+	}
+
+	li,
+	a {
+		view-timeline-name: --details;
+		view-timeline-axis: block;
+
+		animation-timeline: --details;
+		animation-name: showFeatureDetails;
+
+		animation-range: entry 10% cover 30%;
+		animation-fill-mode: both;
+	}
+
+	@keyframes transformSpace {
+		from {
+			transform: translateX(100px);
+		}
+		to {
+			transform: translateX(0);
+		}
+	}
+
+	h3,
+	p {
+		view-timeline-name: --text;
+		view-timeline-axis: block;
+		animation-timeline: --text;
+		animation-name: transformSpace;
+		animation-range: entry 25% cover 60%;
+		animation-fill-mode: both;
+	}
+
+	@keyframes animateBadge {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.badge {
+		view-timeline-name: --badge;
+		view-timeline-axis: block;
+		animation-timeline: --badge;
+		animation-name: animateBadge;
+		animation-range: entry 10% cover 60%;
+		animation-fill-mode: both;
+	}
+</style>

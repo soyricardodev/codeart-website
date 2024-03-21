@@ -1,0 +1,17 @@
+---
+import React from "react"
+import { cn } from "../lib/utils"
+
+interface ContainerProps {
+	as?: React.ElementType
+	className?: string
+}
+
+const { as: Component = "div", className } = Astro.props as ContainerProps
+---
+
+<Component className={cn("mx-auto max-w-7xl px-6 lg:px-8", className)}>
+	<div class="mx-auto max-w-2xl lg:max-w-none">
+		<slot />
+	</div>
+</Component>
