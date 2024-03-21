@@ -1,10 +1,10 @@
 "use client"
 
 import * as SheetPrimitive from "@radix-ui/react-dialog"
-import { cva, type VariantProps } from "class-variance-authority"
+import { type VariantProps, cva } from "class-variance-authority"
 import * as React from "react"
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 const Sheet = SheetPrimitive.Root
 
@@ -60,7 +60,7 @@ const SheetContent = React.forwardRef<
 		<SheetOverlay />
 		<SheetPrimitive.Content ref={ref} className={cn(sheetVariants({ side }), className)} {...props}>
 			{children}
-			<SheetPrimitive.Close className="ring-offset-background focus:ring-ring absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+			<SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="32"
@@ -97,7 +97,7 @@ const SheetTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<SheetPrimitive.Title
 		ref={ref}
-		className={cn("text-foreground text-lg font-semibold", className)}
+		className={cn("text-lg font-semibold text-foreground", className)}
 		{...props}
 	/>
 ))
@@ -109,7 +109,7 @@ const SheetDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<SheetPrimitive.Description
 		ref={ref}
-		className={cn("text-muted-foreground text-sm", className)}
+		className={cn("text-sm text-muted-foreground", className)}
 		{...props}
 	/>
 ))

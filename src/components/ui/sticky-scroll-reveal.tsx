@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import { motion, useMotionValueEvent, useScroll } from "framer-motion"
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 export const StickyScroll = ({
 	content,

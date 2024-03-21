@@ -1,8 +1,8 @@
 import React, { useEffect, useId, useRef, useState } from "react"
 import { MotionConfig, motion, useReducedMotion } from "framer-motion"
 import { Container } from "./container"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { Button } from "../components/ui/button"
+import { cn } from "../lib/utils"
 
 // import { Button } from "./button"
 
