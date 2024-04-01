@@ -1,0 +1,96 @@
+---
+import BentoGrid from "./BentoGrid.astro";
+import BentoGridItem from "./BentoGridItem.astro";
+import GooglePlayIcon from "./icons/GooglePlay.astro";
+import ClockIcon from "./icons/Clock.astro";
+import DesktopIcon from "./icons/Desktop.astro";
+import LightningIcon from "./icons/Lightning.astro";
+import RobotIcon from "./icons/Robot.astro";
+import { SkeletonFive, SkeletonOne, SkeletonThree, SkeletonTwo, SkeletonFour } from "./bento-skeletons";
+
+const features = [
+	{
+		header: SkeletonOne,
+		icon: GooglePlayIcon,
+		title: "Desarrollo de Apps Multiplataforma",
+		description:
+			"Creamos tu aplicaciones móvil para Android e iOS con React Native y Flutter. Llega a más usuarios y optimiza tu inversión.",
+		className: "md:col-span-1",
+	},
+	{
+		header: SkeletonTwo,
+		icon: RobotIcon,
+		title: "Herramientas en IA Personalizadas",
+		description:
+			"Implementamos soluciones de inteligencia artificial que se ajustan a las necesidades de tu negocio. Automatiza tareas, mejora la toma de decisiones y aumenta tu productividad.",
+		className: "md:col-span-1",
+	},
+	{
+		header: SkeletonThree,
+		icon: LightningIcon,
+		title: "Sistemas Administrativos de Alto Nivel",
+		description:
+			"Gestiona tu empresa de forma eficiente con un sistema administrativo integral. Controla tus finanzas, inventario, producción y mucho más.",
+		className: "md:col-span-1",
+	},
+	{
+		header: SkeletonFour,
+		icon: DesktopIcon,
+		title: "Tecnologías Web Modernas",
+		description:
+			"Desarrollamos tu sitio web con las tecnologías más recientes como Next.js, Angular y Nuxt.js. Ofreciendo una experiencia de usuario única y atractiva.",
+		className: "md:col-span-2",
+	},
+	{
+		header: SkeletonFive,
+		icon: ClockIcon,
+		title: "Soporte 24/7",
+		description:
+			"Cuenta con un equipo de expertos que te brindará asistencia técnica en cualquier momento y desde cualquier lugar.",
+		className: "md:col-span-1",
+	},
+];
+---
+
+<BentoGrid className="mx-auto md:auto-rows-[20rem]">
+	<BentoGridItem
+		title={features[0].title}
+		description={features[0].description}
+		className="[&>p:text-lg] md:col-span-1"
+	>
+		<SkeletonOne client:idle slot="header" />
+		<GooglePlayIcon slot="icon" />
+	</BentoGridItem>
+	<BentoGridItem
+		title={features[1].title}
+		description={features[1].description}
+		className="[&>p:text-lg] md:col-span-1"
+	>
+		<SkeletonTwo client:idle slot="header" />
+		<RobotIcon slot="icon" />
+	</BentoGridItem>
+	<BentoGridItem
+		title={features[2].title}
+		description={features[2].description}
+		className="[&>p:text-lg] md:col-span-1"
+	>
+		<SkeletonThree client:idle slot="header" />
+		<LightningIcon slot="icon" />
+	</BentoGridItem>
+	<BentoGridItem
+		title={features[3].title}
+		description={features[3].description}
+		className="[&>p:text-lg] md:col-span-2"
+	>
+		<SkeletonFour client:idle slot="header" />
+		<DesktopIcon slot="icon" />
+	</BentoGridItem>
+	<BentoGridItem
+		title={features[4].title}
+		description={features[4].description}
+		className="[&>p:text-lg] md:col-span-1"
+	>
+		<SkeletonFive client:idle slot="header" />
+		<ClockIcon slot="icon" />
+	</BentoGridItem>
+</BentoGrid>

@@ -3,25 +3,17 @@
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
     "package.json": "pnpm-lock.yaml, package-lock.json, yarn.lock, bun.lockb",
-    ".prettierrc.mjs": ".prettierignore",
-    "README.md": "CONTRIBUTING.md"
+    "README.md": "CONTRIBUTING.md",
+    "astro.config.mjs": "biome.json, postcss.config.mjs, tailwind.config.mjs, tsconfig.json"
   },
   "editor.linkedEditing": true,
-	"editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "biomejs.biome",
   "files.associations": {
     "*.svg": "html"
   },
-  "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
-  "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
-  "typescript.format.insertSpaceBeforeFunctionParenthesis": false,
-  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-  "editor.insertSpaces": false,
-  "editor.detectIndentation": false,
   "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
-  "prettier.documentSelectors": ["**/*.astro"],
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list"]
 }

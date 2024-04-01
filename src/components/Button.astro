@@ -1,13 +1,11 @@
 ---
-import React from "react"
-import { type VariantProps, cva } from "class-variance-authority"
-import { cn } from "../lib/utils"
+import type React from "react";
+import { type VariantProps, cva } from "class-variance-authority";
+import { cn } from "../lib/utils";
 
-interface ButtonProps
-	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-		VariantProps<typeof buttonVariants> {
-	invert?: boolean
-	href?: string
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+	invert?: boolean;
+	href?: string;
 }
 
 const buttonVariants = cva(
@@ -17,11 +15,9 @@ const buttonVariants = cva(
 			variant: {
 				primary:
 					"bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground border border-primary rounded-full",
-				secondary:
-					" text-secondary-foreground hover:bg-primary hover:text-primary-foreground border border-border",
+				secondary: " text-secondary-foreground hover:bg-primary hover:text-primary-foreground border border-border",
 				outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-				alert:
-					"bg-background border border-alert text-content-alert hover:bg-alert hover:text-white",
+				alert: "bg-background border border-alert text-content-alert hover:bg-alert hover:text-white",
 				disabled: "text-secondary-foreground bg-secondary border border-border opacity-50",
 
 				ghost: "hover:bg-gray-200 hover:text-gray-900",
@@ -41,10 +37,10 @@ const buttonVariants = cva(
 			variant: "primary",
 			size: "default",
 		},
-	}
-)
+	},
+);
 
-const { variant = "primary", size = "default", className, href } = Astro.props as ButtonProps
+const { variant = "primary", size = "default", className, href } = Astro.props as ButtonProps;
 ---
 
 {
