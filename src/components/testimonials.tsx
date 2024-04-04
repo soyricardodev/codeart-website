@@ -67,7 +67,7 @@ export function Testimonials() {
 	return (
 		<>
 			<InfiniteMovingCards items={testimonials} direction="right" speed="slow" />
-			<InfiniteMovingCards items={testimonials} direction="left" speed="normal" />
+			<InfiniteMovingCards items={testimonials} direction="left" speed="slow" />
 		</>
 	);
 }

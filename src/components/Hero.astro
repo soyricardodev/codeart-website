@@ -3,67 +3,69 @@ import { Image } from "astro:assets";
 import { hero } from "../assets";
 import Button from "../components/Button.astro";
 import Container from "./Container.astro";
-import { FadeIn } from "./fade-in";
 ---
-
-<Container className="mt-20 w-full flex-auto sm:mt-24 md:mb-8 md:mt-28">
-	<FadeIn client:visible className="md:spacing-x-4 flex flex-col md:flex-row md:justify-stretch">
-		<div class="w-full">
-			<h1 class="text-balance font-display text-6xl font-black tracking-tight text-neutral-950">
-				<div class="words">
-					<span>Impulsamos</span>
-					<span>Lanzamos</span>
-					<span>Mejoramos</span>
-					<span>Aceleramos</span>
-					<span>Creamos</span> 
-				</div>tu negocio <span class="bg-gradient-to-br from-blue-400 via-primary to-sky-400 bg-clip-text text-transparent">en semanas,</span> no en meses. 
-			</h1>
-			<p class="mt-6 text-pretty text-xl text-secondary-foreground">
-				Ofrecemos una amplia gama de servicios, desde aplicaciones web y móviles hasta sistemas
-				administrativos y soluciones de comercio electrónico.
-			</p>
-			<div class="mt-4 flex flex-col space-y-4 md:flex-row md:space-x-8 md:space-y-0">
-				<Button size="xl" className="flex-none text-sm font-bold" href="/">Contactanos</Button>
-			</div>
-		</div>
-		<Image src={hero} alt="Product cap" class="h-auto w-auto max-w-2xl lg:ml-12" />
-	</FadeIn>
-</Container>
+<div id="hero" class="py-40 relative h-dvh">
+  <Container className="w-full flex-auto md:mb-8">
+    <div
+      class="md:spacing-x-4 flex flex-col md:flex-row md:justify-stretch gap-8 animate-fade-in-up"
+    >
+      <div class="w-full">
+        <h1 class="text-balance font-display text-6xl font-bold tracking-tight">
+          <!--
+						<div class="words">
+							<span>Impulsamos</span>
+							<span>Lanzamos</span>
+							<span>Mejoramos</span>
+							<span>Aceleramos</span>
+							<span>Creamos</span> 
+						</div>
+					-->
+          Impulsamos tu negocio
+          <span
+            class="bg-gradient-to-br from-blue-400 via-primary to-sky-400 bg-clip-text text-transparent"
+            >en semanas,</span
+          >
+          no en meses.
+        </h1>
+        <p class="mt-6 text-pretty text-xl">
+          Ofrecemos una amplia gama de servicios, desde aplicaciones web y
+          móviles hasta sistemas administrativos y soluciones de comercio
+          electrónico.
+        </p>
+        <div
+          class="mt-4 flex flex-col space-y-4 md:flex-row md:space-x-8 md:space-y-0"
+        >
+          <Button size="xl" className="flex-none text-sm font-bold" href="/">
+            Contactanos
+          </Button>
+        </div>
+      </div>
+      <figure
+        class="bg-gradient-to-tr from-blue-400 via-primary to-sky-400 p-1 rounded-2xl max-w-2xl"
+      >
+        <Image src={hero} alt="Product cap" class="h-auto w-auto max-w-2xl" />
+      </figure>
+    </div>
+  </Container>
+</div>
 
 <style>
 	.words {
 		overflow: hidden;
-		height: 55px;
+		height: 60px;
 	}
 
 	.words span {
 		display: block;
-		animation: spinWords 8s infinite;
+		transition: transform 0.5s ease-in-out;
+		animation: spinWords 5s infinite alternate-reverse;
 	}
 	
 	@keyframes spinWords {
-		10% {
-			transform: translateY(-112%);
+		from {
+			transform: translateY(0%);
 		}
-		25% {
-			transform: translateY(-100%);
-		}
-		35% {
-			transform: translateY(-212%);
-		}
-		50% {
-			transform: translateY(-200%);
-		}
-		60% {
-			transform: translateY(-312%);
-		}
-		75% {
-			transform: translateY(-300%);
-		}
-		85% {
-			transform: translateY(-412%);
-		}
-		100% {
+		to {
 			transform: translateY(-400%);
 		}
 	}

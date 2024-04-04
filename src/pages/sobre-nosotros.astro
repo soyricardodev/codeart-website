@@ -1,0 +1,138 @@
+---
+import Container from "@/components/Container.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { member1, member2, member3, member4, aboutHero } from "../assets";
+---
+
+<BaseLayout>
+  <Container className="mt-16">
+    <section>
+      <h1 class="text-4xl lg:text-5xl font-bold font-display lg:tracking-tight text-balance text-center">
+        Estamos <span class="bg-gradient-to-br from-blue-400 via-primary to-sky-400 bg-clip-text text-transparent">construyendo el futuro</span>
+      </h1>
+      <p class="text-lg mt-4 text-slate-500 mx-auto max-w-xl text-pretty text-center"> 
+        We're a multi-cultural team from around the world! We come from diverse backgrounds,  different personalities, experiences and skills to the job. This is what makes our team so special.
+      </p>
+    </section>
+
+    <!-- MISION -->
+    <div class="grid sm:grid-cols-2 gap-10 mx-auto mt-24">
+      <div class="relative">
+        <div
+          class="absolute hidden md:block w-96 h-96 bg-primary rounded-full right-0 top-1/3 -z-10"
+        ></div>
+        <div
+          class="absolute hidden md:block w-44 h-44 bg-primary rounded-full left-10 top-1/4 -z-10"
+        ></div>
+        <Image src={aboutHero} alt="About Us" class="w-full max-w-md mx-auto shadow-2xl" />
+      </div>
+      <div class="place-self-center">
+        <h2 class="text-5xl font-display tracking-tight -mt-2">
+          Nuestra <strong class="bg-gradient-to-br from-blue-400 via-primary to-sky-400 bg-clip-text text-transparent">Mision</strong> 
+        </h2>
+        <p class="text-lg max-w-xl mt-4 leading-relaxed text-slate-500">
+          We're a multi-cultural team from around the world! We come from diverse
+          backgrounds, bringing different personalities, experiences and skills to
+          the job. This is what makes our team so special.
+        </p>
+        <ul class="grid mt-6 text-left gap-y-4">
+          <li class="flex items-center gap-3 text-slate-800">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 256 256"
+              class="w-5 h-5"
+              data-icon="ph:check-circle-fill"
+            >
+              <symbol id="ai:ph:check-circle-fill">
+                <path
+                  fill="currentColor"
+                  d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"
+                ></path>
+              </symbol>
+              <use xlink:href="#ai:ph:check-circle-fill"></use>
+            </svg>
+            <span class="text-slate-600">Intelligent Task Management</span>
+          </li>
+          <li class="flex items-center gap-3 text-slate-800">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 256 256"
+              class="w-5 h-5"
+              data-icon="ph:check-circle-fill"
+            >
+              <use xlink:href="#ai:ph:check-circle-fill"></use>
+            </svg>
+            <span class="text-slate-600">Real-time Collaboration</span>
+          </li>
+          <li class="flex items-center gap-3 text-slate-800">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 256 256"
+              class="w-5 h-5"
+              data-icon="ph:check-circle-fill"
+            >
+              <use xlink:href="#ai:ph:check-circle-fill"></use>
+            </svg>
+            <span class="text-slate-600">Data Security &amp; Privacy</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- END MISSION -->
+
+    <!-- CORE TEAM -->
+    <div class="my-24">
+      <h2 class="text-4xl font-display lg:text-5xl lg:tracking-tight text-center">
+        Nuestro <strong class="bg-gradient-to-br from-blue-400 via-primary to-sky-400 bg-clip-text text-transparent">Equipo</strong>
+      </h2>
+      <p class="text-lg mt-4 text-slate-600 text-center">
+        Astroship is built by these awesome individuals.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-4 gap-10 mx-auto mt-12">
+      <div class="group">
+        <div class="w-full aspect-square">
+          <Image src={member1} alt="Daniel Collins" class="w-full h-full object-cover bg-white rounded transition group-hover:-translate-y-1 group-hover:shadow-xl" width={400} height={400} />
+        </div>
+        <div class="mt-4 text-center">
+          <h2 class="text-lg text-gray-800">Daniel Collins</h2>
+          <h3 class="text-sm text-slate-500">Chief Sales Officer</h3>
+        </div>
+      </div>
+      <div class="group">
+        <div class="w-full aspect-square">
+          <Image src={member2} alt="Janette Lynch" class="w-full h-full object-cover bg-white rounded transition group-hover:-translate-y-1 group-hover:shadow-xl" width={400} height={400} />
+        </div>
+        <div class="mt-4 text-center">
+          <h2 class="text-lg text-gray-800">Janette Lynch</h2>
+          <h3 class="text-sm text-slate-500">Senior Director</h3>
+        </div>
+      </div>
+      <div class="group">
+        <div class="w-full aspect-square">
+          <Image src={member3} alt="Marcell Ziemann" class="w-full h-full object-cover bg-white rounded transition group-hover:-translate-y-1 group-hover:shadow-xl" width={400} height={400} />
+        </div>
+        <div class="mt-4 text-center">
+          <h2 class="text-lg text-gray-800">Marcell Ziemann</h2>
+          <h3 class="text-sm text-slate-500">Principal Strategist</h3>
+        </div>
+      </div>
+      <div class="group">
+        <div class="w-full aspect-square">
+          <Image src={member4} alt="Robert Palmer" class="w-full h-full object-cover bg-white rounded transition group-hover:-translate-y-1 group-hover:shadow-xl" width={400} height={400} />
+        </div>
+        <div class="mt-4 text-center">
+          <h2 class="text-lg text-gray-800">Robert Palmer</h2>
+          <h3 class="text-sm text-slate-500">Marketing Engineer</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- CORE TEAM END -->
+  </Container>
+</BaseLayout>

@@ -1,27 +1,20 @@
 ---
-import { Image } from "astro:assets"
-import { workflow1, workflow2 } from "../assets"
-import { cn } from "../lib/utils"
-import Button from "./Button.astro"
+import { Image } from "astro:assets";
+import { workflow1, workflow2 } from "../assets";
+import { cn } from "../lib/utils";
+import Button from "./Button.astro";
 
 export interface FeatureItemProps {
-	badge: string
-	title: string
-	description: string
-	featuresList: string[]
-	image: "workflow1" | "workflow2"
-	isReversed?: boolean
+	badge: string;
+	title: string;
+	description: string;
+	featuresList: string[];
+	image: "workflow1" | "workflow2";
+	isReversed?: boolean;
 }
 
-const {
-	badge,
-	title,
-	description,
-	image,
-	featuresList,
-	isReversed = false,
-} = Astro.props as FeatureItemProps
-const asset = image === "workflow1" ? workflow1 : workflow2
+const { badge, title, description, image, featuresList, isReversed = false } = Astro.props as FeatureItemProps;
+const asset = image === "workflow1" ? workflow1 : workflow2;
 ---
 
 <div class="feature-container grid py-10 md:grid-cols-2">
@@ -31,14 +24,14 @@ const asset = image === "workflow1" ? workflow1 : workflow2
 	<div class="grid place-items-center">
 		<div class="max-w-lg">
 			<span
-				class="badge -ml-px rounded-full border border-primary bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+				class="badge -ml-px rounded-full border border-primary bg-primary/10 px-3 py-1 text-base font-medium text-primary"
 			>
 				{badge}
 			</span>
 			<h3 class="mt-4 text-balance font-display text-2xl font-medium">
 				{title}
 			</h3>
-			<p class="mt-4 text-pretty text-secondary-foreground">
+			<p class="mt-4 text-pretty text-lg text-secondary-foreground">
 				{description}
 			</p>
 			<ul class="mt-6 grid gap-y-4 text-left">
@@ -60,13 +53,13 @@ const asset = image === "workflow1" ? workflow1 : workflow2
 								</symbol>
 								<use xlink:href="#ai:ph:check-circle-fill" />
 							</svg>
-							<span class="text-base">{feature}</span>
+							<span class="text-lg">{feature}</span>
 						</li>
 					))
 				}
 			</ul>
 			<div class="mt-6 flex items-center gap-4">
-				<Button href="/" className="rounded-full">
+				<Button href="/" className="rounded-full text-lg p-4">
 					<span>Pruebalo Gratis</span>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +73,7 @@ const asset = image === "workflow1" ? workflow1 : workflow2
 							clip-rule="evenodd"></path>
 					</svg>
 				</Button>
-				<Button href="/" variant="ghost" className="rounded-full">Contactanos</Button>
+				<Button href="/" variant="ghost" className="rounded-full text-lg">Contactanos</Button>
 			</div>
 		</div>
 	</div>

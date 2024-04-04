@@ -2,14 +2,16 @@
 import BentoFeatures from "./BentoFeatures.astro";
 ---
 
-<div class="mx-auto max-w-screen-xl px-5">
-	<div class="mt-36 mb-24">
-		<h2 class="font-display max-w-screen-md text-center mx-auto text-4xl font-bold lg:text-5xl lg:tracking-tight">
-			Todo lo que necesitas para <span
-				class="bg-gradient-to-br from-blue-600 via-primary to-sky-400 bg-clip-text text-transparent"
-				>impulsar tu negocio</span
-			>
-		</h2>
+<div class="relative py-14 bg-grid-sky-200/30">
+	<div class="mx-auto max-w-screen-xl px-5 relative">
+		<div class="mt-36 mb-24">
+			<h2 class="font-display py-4 text-center text-4xl font-bold tracking-tight md:text-7xl text-balance text-black">
+				Todo lo que necesitas para <span
+					class="bg-gradient-to-br from-blue-600 via-primary to-sky-400 bg-clip-text text-transparent"
+					>impulsar tu negocio</span
+				>
+			</h2>
+		</div>
+		<BentoFeatures />
 	</div>
-	<BentoFeatures />
 </div>
